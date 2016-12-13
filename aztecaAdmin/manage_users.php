@@ -114,8 +114,7 @@
     //close the db connection
     $pdo=null;
 
-    // Make the links to other pages, if necessary.
-    link_section($pages, $start, $display,$sort, basename($_SERVER['PHP_SELF']));
+   
 
     include (FOOTER);
 
