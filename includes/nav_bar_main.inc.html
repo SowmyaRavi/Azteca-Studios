@@ -8,9 +8,8 @@
                     if(!empty($_SESSION)){
                         echo (del_sess_if_exp());
                     }
-                        elseif(isset($_COOKIE['last_loggedin']) && isset($_COOKIE['last_ip'])) {
-                        echo(last_login_info());
-                    }else{
+                        
+                    else{
                         if(basename($_SERVER['PHP_SELF'])=="index.php"){
                             echo (page_counter("count1",'/ass2/azteca/index.php'));
                         }
