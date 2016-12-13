@@ -101,7 +101,7 @@
         
       echo '</table>';
       
-      link_section($pages, $start, $display,$sort, basename($_SERVER['PHP_SELF']));
+     
 
     }
       
