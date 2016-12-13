@@ -138,20 +138,6 @@ function art_sort_function($sort){
     return $order_by;
 }
 
-function get_page_no($dbh,$q,$display){
-    
-    // Count the number of records:
-	$query=$dbh->prepare($q); 
-    $query->execute();
-	$row_count = $query->rowCount();
-	// Calculate the number of pages...
-	if ($row_count> $display) { // More than 1 page.
-		$pages = ceil ($records/$display);
-	} else {
-		$pages = 1;
-	}
-    return $pages;    
-}
 
 
 
