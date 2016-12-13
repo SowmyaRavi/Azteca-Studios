@@ -84,34 +84,7 @@
       
       echo '</table>';
 
-      //for drawing plot on number of books sold  
- $start_date = "2016-01-01";
- $month_count = 0;
- $data_qty = array();
-while($month_count<12) {
-  
-  $end_date =  date('Y-m-d', strtotime($start_date. ' + 90 days'));
-  $q = "SELECT copies_sold FROM azteca_artwork WHERE created_on BETWEEN '$start_date' AND '$end_date'";
-
-  $query=$dbh->prepare($q);
-     $query->execute();
-  $month_qy = 0;
-  while ( $row = $query->fetch(PDO::FETCH_ASSOC)){
-    $month_qy += $row['copies_sold'];
   }
-  $data_qty[] = $month_qy;
-  $month_count++;
-  $start_date = $end_date;
-}
-  
-  
-$data = json_encode($data_qty);
-$dataset_X = "{name: 'Artworks Sold Per month', data:". $data."}";
-        
-
-      link_section($pages, $start, $display,$sort, basename($_SERVER['PHP_SELF']));
-
-    }
 
     $pdo=null;
 
